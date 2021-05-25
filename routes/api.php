@@ -48,5 +48,7 @@ Route::put('domains/{id}', function(Request $request, $id) {
 
 Route::delete('domains/{id}', function($id) {
     Domain::find($id)->delete();
-    return 204;
+    return response()->json([
+        "message" => "Record deleted"
+    ], 204);
 });
